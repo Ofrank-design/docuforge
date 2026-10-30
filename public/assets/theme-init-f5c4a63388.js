@@ -1,0 +1,1 @@
+(function(){var d=document.documentElement;d.classList.add("df-js");try{var p=localStorage.getItem("df-theme");if(p!=="light"&&p!=="dark")p="system";var k=p==="dark"||(p==="system"&&matchMedia("(prefers-color-scheme: dark)").matches);d.dataset.theme=k?"dark":"light";d.dataset.themePref=p;d.style.colorScheme=k?"dark":"light"}catch(e){}})();
