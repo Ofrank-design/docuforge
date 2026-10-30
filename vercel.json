@@ -1,5 +1,0 @@
-{
-  "buildCommand": "npm run build && npx docuforge build --source docs --out public",
-  "outputDirectory": "public",
-  "installCommand": "npm install"
-}
