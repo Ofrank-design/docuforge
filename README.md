@@ -231,24 +231,6 @@ For safety the stylesheet is cleaned: `@import`, every `url()` except inline ima
 `behavior` and `-moz-binding` are removed (with a warning that lists what was removed). If something is written in a way
 that can't be cleaned reliably (for example with CSS escapes like `\75rl(`), the build fails rather than guess.
 
-## Deployment
-
-The output folder is plain static files; upload it anywhere. Every page is `folder/index.html` and every URL ends in `/`,
-which works on all common hosts. Remember:
-
-- **Base path.** A site served from a sub-path (`https://you.github.io/repo/`) must be built with
-  `--base /repo/` (or `basePath`). A site at the domain root needs nothing.
-- **`siteUrl`** is what lets DocuForge write `sitemap.xml`, the `Sitemap:` line in `robots.txt`, canonical URLs and
-  `og:image` (those require absolute URLs). Without it they are skipped. `robots.txt` and `404.html` are always written,
-  and a `robots.txt`, `sitemap.xml` or `404.html` you place in `public/` replaces the generated one.
-- **`robots.txt`** only works at a domain root; on a sub-path site, crawlers ignore it.
-- **`.docuforge-build` and `.docuforge-manifest.json`** in the output are small harmless metadata files (they list only
-  relative file names). Hide them with your host's dotfile rules (see `nginx.conf`) if you prefer.
-
-Ready-made configs are in [`examples/deploy/`](examples/deploy/github-pages.yml): GitHub Pages (a workflow),
-[Netlify](examples/deploy/netlify.toml), [Vercel](examples/deploy/vercel.json) and [nginx](examples/deploy/nginx.conf).
-They also set the recommended security headers (the same policy `docuforge preview` enforces).
-Always run `docuforge preview` first: it serves the site under its real base path and exposes problems before you deploy.
 
 ## Security
 
@@ -282,15 +264,3 @@ Markdown, front matter, file names and assets are treated as untrusted; the conf
 | Search says "unavailable" | `search-index.json` didn't load: check the base path and that the file was deployed. |
 
 
-## Known limitations
-
-- Client JavaScript is about 75 KB gzipped (React). Reading works without it; it powers search, the theme toggle,
-  the mobile drawer and copy buttons.
-- The sidebar is repeated in every page's HTML (fine for hundreds of pages).
-- Tested in Chromium and jsdom. Please also check Firefox, Safari, a screen reader and real touch devices before relying on them.
-- Custom anchors written as raw HTML (`<a id="x">`) are not supported; link to headings.
-- Theme layout and fonts are fixed; colors, logo and extra CSS are customizable.
-
-## License
-
-MIT. See [LICENSE](LICENSE).
