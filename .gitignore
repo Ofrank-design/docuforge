@@ -1,0 +1,16 @@
+node_modules/
+dist/
+packages/*/dist/
+coverage/
+*.log
+.DS_Store
+.env
+.env.*
+# Build output of the sample site
+/out/
+/sample-dist/
+
+# built theme copied into the CLI package
+packages/cli/theme-assets/
+packages/theme/dist/
+.example-site/

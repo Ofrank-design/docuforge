@@ -1,0 +1,9 @@
+{
+  "title": "DocuForge",
+  "description": "Your Markdown, beautifully documented.",
+  "source": "./sample-docs",
+  "output": "../.example-site",
+  "siteUrl": "https://docs.example.com",
+  "logo": "public/logo-mark.png",
+  "footer": "Built with DocuForge"
+}

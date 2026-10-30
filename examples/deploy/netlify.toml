@@ -1,0 +1,19 @@
+# Put at the root of the repository.
+[build]
+  command = "npx docuforge build --source ./docs --out ./dist --strict-links"
+  publish = "dist"
+
+# Netlify serves /404.html for unknown URLs automatically.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    # theme files are content-hashed, so they can be cached forever
+    Cache-Control = "public, max-age=31536000, immutable"

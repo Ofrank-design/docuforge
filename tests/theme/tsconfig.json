@@ -1,0 +1,5 @@
+{
+  "extends": "../../packages/theme/tsconfig.json",
+  "compilerOptions": { "types": ["node"] },
+  "include": ["./**/*.ts", "./**/*.tsx", "../../packages/theme/src/**/*", "../../packages/cli/src/search/*.ts", "../../packages/cli/src/templates/themeAssets.ts"]
+}

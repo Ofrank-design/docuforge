@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 140" role="img" aria-labelledby="t">
+  <title id="t">Authentication flow: client sends a token, the API verifies it, the job runs</title>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4338ca"/></marker></defs>
+  <g font-family="system-ui,sans-serif" font-size="15" text-anchor="middle">
+    <rect x="10" y="40" width="160" height="60" rx="10" fill="#eef0ff" stroke="#4338ca"/><text x="90" y="76" fill="#1b2030">Client</text>
+    <rect x="240" y="40" width="160" height="60" rx="10" fill="#eef0ff" stroke="#4338ca"/><text x="320" y="76" fill="#1b2030">API</text>
+    <rect x="470" y="40" width="160" height="60" rx="10" fill="#eef0ff" stroke="#4338ca"/><text x="550" y="76" fill="#1b2030">Job runner</text>
+    <path d="M170 70H236" stroke="#4338ca" stroke-width="2" marker-end="url(#a)"/><text x="203" y="32" fill="#52607a" font-size="12">token</text>
+    <path d="M400 70H466" stroke="#4338ca" stroke-width="2" marker-end="url(#a)"/><text x="433" y="32" fill="#52607a" font-size="12">verified</text>
+  </g></svg>
